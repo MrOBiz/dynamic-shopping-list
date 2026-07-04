@@ -38,6 +38,12 @@
       function addElement(){
         preventDefault();
         text.innerText = text.value;
+        text.value = "";
+
+        const point = document.createElement("li");
+        const span = document.createElement("span");
+        const delButton = document.createElement("button");
+        delButton.textContent = "Delete";
 
       }
        
