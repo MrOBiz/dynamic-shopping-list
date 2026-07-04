@@ -23,7 +23,7 @@
     <form>
       <label for="item">Enter a new item:</label>
       <input type="text" name="item" id="item">
-      <button onclick="addElement()">Add item</button>
+      <button>Add item</button>
     </form>
 
     <ul>
@@ -35,22 +35,29 @@
       const input = document.querySelector("input");
       const button = document.querySelector("button");
 
-      function addElement(){
-        document.preventDefault();
-        text.innerText = text.value;
-        text.value = "";
+      function addElement(event){
+        event.preventDefault();
+        const itemText = input.value;
+        input.value = "";
 
         const point = document.createElement("li");
         const span = document.createElement("span");
         const delButton = document.createElement("button");
+        
+        point.appendChild(span);
+        point.appendChild(delButton);
+
         delButton.textContent = "Delete";
+        span.textContent = itemText;
+        
+        list.appendChild(point);
 
-        point.appendChild();
-        span.appendChild();
-        delButton.appendChild();
+        delButton.addEventListener("click", function () {point.remove()});
 
+        input.focus();
       }
-       
+
+      button.addEventListener("click", addElement);
 
     </script>
   </body>
