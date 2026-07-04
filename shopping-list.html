@@ -32,11 +32,11 @@
 
     <script>
       const list = document.querySelector("ul");
-      const text = document.querySelector("input");
+      const input = document.querySelector("input");
       const button = document.querySelector("button");
 
       function addElement(){
-        preventDefault();
+        document.preventDefault();
         text.innerText = text.value;
         text.value = "";
 
@@ -44,6 +44,10 @@
         const span = document.createElement("span");
         const delButton = document.createElement("button");
         delButton.textContent = "Delete";
+
+        point.appendChild();
+        span.appendChild();
+        delButton.appendChild();
 
       }
        
